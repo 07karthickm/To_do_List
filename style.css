@@ -1,0 +1,170 @@
+/* General styles */
+html, body {
+    margin: 0;
+    font-family: 'Rajdhani', sans-serif;
+    background: radial-gradient(circle, #101010, #000);
+    color: #e0e0e0;
+    overflow: hidden;
+    height: 100%;
+}
+
+#wrapper {
+    max-height: 80vh;
+    width: 90%;
+    max-width: 400px;
+    margin: 5% auto;
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 0 0 60px rgba(255, 0, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    max-height: 600px; /* Ensures maximum height */
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    #wrapper {
+        width: 95%;
+        margin: 10% auto;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    /* Adjustments specific to mobile view */
+    input {
+        font-size: 1em;
+        height: 3em; /* Consistent height */
+    }
+
+    button {
+        height: 3em; /* Consistent height */
+        font-size: 1em;
+        padding: 0 20px;
+    }
+}
+
+/* Header styles */
+h2 {
+    color: #ff007f;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 0 0 20px rgba(255, 0, 127, 0.8), 0 0 40px rgba(255, 0, 127, 0.5);
+    animation: glitch 1.5s infinite;
+}
+
+/* Input field styles */
+input {
+    border-radius: 8px;
+    border: 2px solid #00ffcc;
+    height: 3em; /* Consistent height */
+    width: calc(100% - 32px); /* Ensures input field width minus padding/border */
+    padding: 0 15px; /* Padding adjusted */
+    font-size: 1.1em; /* Consistent font size */
+    background: #1a1a1a;
+    color: #00ffcc;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Ensures padding/border are included in height/width */
+}
+
+/* Placeholder styles */
+input::placeholder {
+    color: #777;
+}
+
+input:focus {
+    border-color: #ff007f;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.6);
+    outline: none;
+}
+
+/* Button styles */
+button {
+    margin-top: 15px;
+    background-color: #00ffcc;
+    border-radius: 12px;
+    height: 3em; /* Consistent height */
+    font-weight: bold;
+    padding: 0 30px; /* Consistent padding */
+    letter-spacing: 1px;
+    border: none;
+    color: #000;
+    font-size: 1.1em; /* Consistent font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(255, 0, 255, 0.4);
+    position: relative;
+    box-sizing: border-box; /* Ensures padding/border are included in height/width */
+}
+
+button:hover {
+    background-color: #00cc99;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.9), 0 0 60px rgba(255, 0, 255, 0.6);
+}
+
+/* Todo list container styles */
+#todoList {
+    color: #e0e0e0;
+    font-size: 1em;
+    margin-top: 15px;
+    padding: 10px;
+    border-top: 2px solid #00ffcc;
+    overflow-y: auto;
+    flex-grow: 1;
+    max-height: calc(80vh - 100px); /* Ensures the list does not exceed available space */
+}
+
+/* Todo item container styles */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+    background: linear-gradient(145deg, #2b2b2b, #1a1a1a);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.todo-item:hover {
+    background: linear-gradient(145deg, #444, #333);
+    transform: scale(1.02);
+}
+
+/* Delete button styles */
+.delete-btn {
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+}
